@@ -1,0 +1,41 @@
+simulation: org.projectnessie.perftest.gatling.CommitToBranchSimulation
+start: 2021-06-16 13:27:22
+duration: 6.4
+throughput: 312.7
+averageMs: 9.9
+count: 2000
+successCount: 2000
+errorCount: 0
+maxUser: 10
+apdex:
+t: 1.5
+rating: Excellent
+score: 1.0
+min: 1
+max: 308
+p50: 6
+p95: 25
+p99: 41
+avg: 9.9365
+
+# Request mapping
+  Nessie-Commit-2:
+  name: Nessie-Commit-2
+  scenario: 
+  averageMs: 9.9
+  stddev: 15
+  rps: 312.6954346466542
+  count: 2000
+  successCount: 2000
+  errorCount: 0
+  maxUser: 10
+  apdex:
+  t: 1.5
+  rating: Excellent
+  score: 1.0
+  min: 1
+  max: 308
+  p50: 6
+  p95: 25
+  p99: 41
+  avg: 9.9365
