@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<h1>committobranchsimulation Trend report</h1>
+
+<div id="totalDiv"></div>
+  <div id="div2"></div>
+  <div id="div7"></div>
+
+<script>
+function clone(obj) {
+    if(obj == null || typeof(obj) != 'object')
+        return obj;
+    var temp = new obj.constructor();
+    for(var key in obj)
+        temp[key] = clone(obj[key]);
+    return temp;
+}
+
+var data = [{
+  type: 'scatter',
+  mode: 'lines',
+  x: ['2021-06-16 11:44:54', '2021-06-16 11:45:12', '2021-06-16 11:56:52'],
+  y: [],
+  line: {
+    width: 2
+  },
+  error_y: {
+    array: [],
+    thickness: 0.5,
+    width: 0
+  },
+  name: 'Response time'
+  },
+  {
+    type: 'scatter',
+    mode: 'lines',
+    x: ['2021-06-16 11:44:54', '2021-06-16 11:45:12', '2021-06-16 11:56:52'],
+    y: [],
+    yaxis: 'y2',
+    name: 'Requests/s'
+  }
+];
+
+var layout = {
+  title: "",
+  xaxis: {
+    title: "Date"
+  },
+  yaxis: {
+    title: "Time in ms",
+    rangemode: "nonnegative"
+  },
+  yaxis2: {
+    title: 'Requests per second',
+    overlaying: 'y',
+    side: 'right',
+    rangemode:"tozero"
+  }
+};
+
+var layoutAll = clone(layout);
+layoutAll["title"] = "committobranchsimulation - Response time (avg + stddev)";
+var dataAll = clone(data);
+dataAll[0]["y"] = [0.05771144278606965, 5.4965, 5.6145];
+dataAll[0]["error_y"]["array"] = [0, 12, 12];
+dataAll[1]["y"] = [0.0, 1165.5011655011656, 1139.6011396011397];
+
+Plotly.plot('totalDiv', dataAll, layoutAll, {showLink: false});
+
+var layout2 = clone(layout);
+layout2["title"] = "Nessie-Get reference commits-1623836694453-3 - Response time (avg + stddev)";
+var data2 = clone(data);
+data2[0]["y"] = [1.2, null, null];
+data2[0]["error_y"]["array"] = [0, null, null];
+data2[1]["y"] = [0.0, null, null];
+Plotly.plot('div2', data2, layout2, {showLink: false});
+
+var layout7 = clone(layout);
+layout7["title"] = "Nessie-Commit-2 - Response time (avg + stddev)";
+var data7 = clone(data);
+data7[0]["y"] = [0.052, 5.4965, 5.6145];
+data7[0]["error_y"]["array"] = [0, 12, 12];
+data7[1]["y"] = [0.0, 1165.5011655011656, 1139.6011396011397];
+Plotly.plot('div7', data7, layout7, {showLink: false});
+
+
+
+</script>
+
