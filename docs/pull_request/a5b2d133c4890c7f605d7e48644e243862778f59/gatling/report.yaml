@@ -1,0 +1,89 @@
+throughput:
+gain: +95.50
+status: win
+
+average:
+gain: -53.81
+status: win
+
+ref:
+simulation: org.projectnessie.perftest.gatling.CommitToBranchSimulation
+start: 2021-06-17 10:25:26
+duration: 3.7
+throughput: 267.5
+averageMs: 10.2
+count: 1000
+successCount: 1000
+errorCount: 0
+apdex:
+t: 1.5
+rating: Excellent
+score: 1.0
+min: 2
+max: 225
+p50: 7
+p95: 25
+p99: 46
+avg: 10.219
+
+# Request mapping
+requests:
+  - Nessie-Commit-2:
+  name: Nessie-Commit-2
+  averageMs: 10.2
+  stddev: 15
+  rps: 267.5227394328518
+  count: 1000
+  successCount: 1000
+  errorCount: 0
+  apdex:
+  t: 1.5
+  rating: Excellent
+  score: 1.0
+  min: 2
+  max: 225
+  p50: 7
+  p95: 25
+  p99: 46
+  avg: 10.219
+
+challenger:
+simulation: org.projectnessie.perftest.gatling.CreateManyBranchesSimulation
+start: 2021-06-17 10:25:32
+duration: 1.9
+throughput: 523.0
+averageMs: 4.7
+count: 1000
+successCount: 1000
+errorCount: 0
+apdex:
+t: 1.5
+rating: Excellent
+score: 1.0
+min: 1
+max: 48
+p50: 3
+p95: 12
+p99: 18
+avg: 4.72
+
+# Request mapping
+requests:
+  - Nessie-Create branch-2:
+  name: Nessie-Create branch-2
+  averageMs: 4.7
+  stddev: 4
+  rps: 523.0125523012553
+  count: 1000
+  successCount: 1000
+  errorCount: 0
+  apdex:
+  t: 1.5
+  rating: Excellent
+  score: 1.0
+  min: 1
+  max: 48
+  p50: 3
+  p95: 12
+  p99: 18
+  avg: 4.72
